@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      # 1. Tạo snake
       - name: Generate GitHub contribution snake
         uses: Platane/snk/svg-only@v3
         with:
@@ -29,6 +30,30 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # 2. Làm animation chậm hơn
+      - name: Slow down snake animation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          SPEED_FACTOR = 2.5
+
+          for file in Path("dist").glob("*.svg"):
+              text = file.read_text(encoding="utf-8")
+
+              text = re.sub(
+                  r'(\d+)ms\b',
+                  lambda m: f"{int(int(m.group(1)) * SPEED_FACTOR)}ms",
+                  text
+              )
+
+              file.write_text(text, encoding="utf-8")
+
+              print(f"Slowed animation: {file}")
+          PY
+
+      # 3. Push sang branch output
       - name: Push snake to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
