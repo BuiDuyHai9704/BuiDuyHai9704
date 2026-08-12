@@ -1,8 +1,8 @@
 <div align="center">
 
 <img
-  src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&duration=2200&pause=800&color=00FF99&center=true&vCenter=true&repeat=true&width=650&height=70&lines=Hi%2C+I'm+BuiDuyHai+%F0%9F%91%8B"
-  alt="Hi, I'm BuiDuyHai"
+  src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&duration=2200&pause=800&color=00FF99&center=true&vCenter=true&repeat=true&width=650&height=70&lines=Hi%2C+I'm+Bui Duy Hai"
+  alt="Hi, I'm Bui Duy Hai"
 />
 
 </div>
